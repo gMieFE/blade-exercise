@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 
 class ShoppingListController extends Controller
 {
-    public function shoppingListRoute(): View
+    public function shoppingListGet(): View
+    { 
+        return view('shoppingList');
+    }
+
+    public function shoppingListPost(): View
     { 
         return view('shoppingList');
     }
