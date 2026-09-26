@@ -11,6 +11,9 @@ Route::get('/form', [FormController::class, 'formGet'])->name('form');
 Route::post('/form', [FormController::class, 'formPost']);
 
 
-Route::get('/shoppingList', [ShoppingListController::class, 'shoppingListRoute'])->name('shoppingList');
+Route::get('/shoppingList', [ShoppingListController::class, 'shoppingListGet'])->name('shoppingList');
+Route::post('/shoppingList', [ShoppingListController::class, 'shoppingListPost']);
+
+
 
 
