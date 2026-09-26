@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
-    public function formGet(Request $request): View
+    public function formGet(): View
     {
         return view('form', [
                 'name' => '',
@@ -25,4 +25,9 @@ class FormController extends Controller
                 'last_name'=> $last_name,
             ]);
     }
+
+    // public function formRoute(): View
+    // {
+    //     return view('form');
+    // }
 }

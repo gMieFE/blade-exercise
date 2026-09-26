@@ -18,20 +18,51 @@
         @endif
     </head>
     <body >
-        <div class="w-screen flex justify-center mt-6">
-            <div class="flex w-xs m-2 gap-2">
-                <a href="{{ route('shoppingList') }}"
-                    class="flex-1 border-2 rounded p-2 cursor-pointer">
-                    SHOPPING LIST
-                </a>
+        <div class="flex justify-center items-center w-screen h-screen ">
+            <div class="grid grid-cols-2 h-fit gap-10">
+                    <div>
+                        <h1 class="h-fit mb-5">SHOPPING LIST</h1>
 
-                <a href="{{ route('form') }}"
-                    class="flex-1 border-2 rounded p-2 cursor-pointer">
-                    FORM
-                </a>
+                        <form class="grid grid-cols-1 w-fit h-fit gap-3" action="" method="post">
+
+                            <div class="grid grid-cols-2">
+                                <label for="product_name">Product name</label>
+                                <input class="border" type="text" name="product_name" id="product-name">
+                            </div>
+
+                            <div class="grid grid-cols-2">
+                                <label for="product_cost">Cost</label>
+                                <input class="border" type="text" name="product_cost" id="product-cost">
+                            </div>
+
+                            <div class="grid grid-cols-2">
+                                <label for="product_amount">Amount</label>
+                                <input class="border" type="number" name="product_amount" id="product-amount">
+                            </div>
+
+                            <div class="grid grid-cols-2">
+                                <label for="shop_name">Shop name</label>
+                                <input class="border" type="text" name="shop_name" id="shop-name">
+                            </div>
+
+                            <div class="grid grid-cols-2">
+                                <label for="product_barcode">Barcode</label>
+                                <input class="border" type="text" name="product_barcode" id="product-barcode">
+                            </div>
+
+                            <button type="submit" class="border-2 px-2 cursor-pointer">ADD</button>
+
+                        </form> 
+                    </div>
+
+                    <div class="grid grid-cols-1 w-fit h-fit gap-3">
+                        <h1> PRODUCTS </h1>
+                        {{-- <p>{{ product_name }}, {{ product_cost }}, {{ product_amount }}, {{ shop_name }}, {{ product_barcode }}</p>    --}}
+                    </div>
+
             </div>
         </div>
 
-        <p>{{$name}}</p>
+            
     </body>
 </html>
