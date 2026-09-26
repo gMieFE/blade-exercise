@@ -61,8 +61,9 @@
                         
                         @foreach ($products as $product)
                             <div>
-                                {{ $product['name']}}, {{ $product['cost'] }}, {{ $product['amount'] }}, {{ $product['store_name'] }}, {{ $product['barcode'] }}
+                                {{ $product->name }}, {{ $product->cost }}, {{ $product->amount }}, {{ $product->shop_name }}, {{ $product->barcode }}
                             </div>
+                            {{-- <button>-</button> --}}
                         @endforeach
 
                     </div>
