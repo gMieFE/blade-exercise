@@ -57,7 +57,14 @@
 
                     <div class="grid grid-cols-1 w-fit h-fit gap-3">
                         <h1> PRODUCTS </h1>
-                        <p>{{ $product_name }}, {{ $product_cost }}, {{ $product_amount }}, {{ $shop_name }}, {{ $product_barcode }}</p>   
+                        {{-- <p>{{ $product_name }}, {{ $product_cost }}, {{ $product_amount }}, {{ $shop_name }}, {{ $product_barcode }}</p> --}}
+                        
+                        @foreach ($products as $product)
+                            <div>
+                                {{ $product['name']}}, {{ $product['cost'] }}, {{ $product['amount'] }}, {{ $product['store_name'] }}, {{ $product['barcode'] }}
+                            </div>
+                        @endforeach
+
                     </div>
 
             </div>

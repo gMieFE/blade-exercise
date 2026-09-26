@@ -6,14 +6,34 @@ use Illuminate\Http\Request;
 
 class ShoppingListController extends Controller
 {
+    private const array PRODUCTS = [
+        0 => [
+            "name"=> "abc",
+            "cost"=> "123",
+            "amount"=> "1",
+            "store_name"=> "shop",
+            "barcode"=> "b1a2r3c4o5d6",
+        ],
+        1=> [
+            "name"=> "wah",
+            "cost"=> "321",
+            "amount"=> "3",
+            "store_name"=> "shop1",
+            "barcode"=> "b1a2r3c4oasf",
+        ],
+        2=> [
+            "name"=> "noo",
+            "cost"=> "55",
+            "amount"=> "1",
+            "store_name"=> "shop4",
+            "barcode"=> "barkodas1234",
+        ]
+    ];
+
     public function shoppingListGet(): View
     { 
         return view('shoppingList', [
-                'product_name' => '',
-                'product_cost'=> '',
-                'product_amount'=> '',
-                'shop_name'=> '',
-                'product_barcode'=> '',
+                'products'=> self::PRODUCTS,
             ]);
     }
 
@@ -27,11 +47,7 @@ class ShoppingListController extends Controller
         $product_barcode = $request->input('product_barcode');
 
         return view('shoppingList', [
-                'product_name' => $product_name,
-                'product_cost'=> $product_cost,
-                'product_amount'=> $product_amount,
-                'shop_name'=> $shop_name,
-                'product_barcode'=> $product_barcode,
+                'products'=> self::PRODUCTS,
             ]);
     }
 }
