@@ -60,10 +60,13 @@
                         {{-- <p>{{ $product_name }}, {{ $product_cost }}, {{ $product_amount }}, {{ $shop_name }}, {{ $product_barcode }}</p> --}}
                         
                         @foreach ($products as $product)
+                        <div class="grid grid-cols-2">
                             <div>
                                 {{ $product->name }}, {{ $product->cost }}, {{ $product->amount }}, {{ $product->shop_name }}, {{ $product->barcode }}
                             </div>
-                            {{-- <button>-</button> --}}
+                            <button class="border-2 w-2xs px-2 cursor-pointer">-</button> 
+                        </div>
+
                         @endforeach
 
                     </div>

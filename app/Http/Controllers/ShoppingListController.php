@@ -1,27 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-use function Illuminate\Support\now;
 
 class ShoppingListController extends Controller
 {
-
-
-
     public function shoppingListGet(): View
     { 
-        $products = DB::select('select * from products');
+        $products = Product::all();
 
         return view('shoppingList', [
                 'products'=> $products,
             ]);
     }
 
-    public function shoppingListPost(Request $request): View
+    public function shoppingListPost(Request $request)
     { 
         $product_name = $request->input('product_name');
         $product_cost = $request->input('product_cost');
@@ -29,17 +26,18 @@ class ShoppingListController extends Controller
         $shop_name = $request->input('shop_name');
         $product_barcode = $request->input('product_barcode');
 
-        DB::insert(
-            'insert into products (name, cost, amount, shop_name, barcode, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)',
-            [$product_name, $product_cost, $product_amount, $shop_name, $product_barcode, now(), now()]
-        );
+        
+        Product::create([
+            'name' => $product_name,
+            'cost'=> $product_cost,
+            'amount'=> $product_amount,
+            'shop_name'=> $shop_name,
+            'barcode'=> $product_barcode
+        ]);
 
-        $products = DB::select('select * from products');
         //dd($products);
 
-        return view('shoppingList', [
-                'products'=> $products,
-            ]);
+        return redirect('shoppingList');
     }
 }
 
