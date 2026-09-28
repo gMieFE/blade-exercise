@@ -39,5 +39,14 @@ class ShoppingListController extends Controller
 
         return redirect('shoppingList');
     }
+
+    public function shoppingListDelete(Request $request)
+    {
+        $id = $request->input('id');
+
+        Product::destroy($id);
+
+        return redirect('shoppingList');
+    }
 }
 

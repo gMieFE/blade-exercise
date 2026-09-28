@@ -64,7 +64,17 @@
                             <div>
                                 {{ $product->name }}, {{ $product->cost }}, {{ $product->amount }}, {{ $product->shop_name }}, {{ $product->barcode }}
                             </div>
-                            <button class="border-2 w-2xs px-2 cursor-pointer">-</button> 
+
+
+                            <form action="/shoppingList/delete" method="POST">
+                                @csrf
+
+                                <input type="hidden" name="id" value="{{ $product->id }}">
+
+                                <button type="submit" class="border-2 w-2xs px-2 cursor-pointer">
+                                    -
+                                </button>
+                            </form>
                         </div>
 
                         @endforeach

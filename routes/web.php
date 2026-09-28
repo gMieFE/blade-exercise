@@ -13,6 +13,7 @@ Route::post('/form', [FormController::class, 'formPost']);
 
 Route::get('/shoppingList', [ShoppingListController::class, 'shoppingListGet'])->name('shoppingList');
 Route::post('/shoppingList', [ShoppingListController::class, 'shoppingListPost']);
+Route::post('/shoppingList/delete', [ShoppingListController::class, 'shoppingListDelete']);
 
 
 
