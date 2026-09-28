@@ -1,58 +1,111 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Blade Exercise
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel application for practicing and experimenting with [Blade](https://laravel.com/docs/blade) templates, built on the Laravel 13 skeleton.
 
-## About Laravel
+A small Laravel app with three Blade views: a home page with navigation links, a form that collects a first and last name, and a shopping list where users can add products, see the saved list, and delete items.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+| Page | View | What it does |
+| --- | --- | --- |
+| Home | `app.blade.php` | Landing page with navigation links to the other pages |
+| Form | `form.blade.php` | Collects a first name and last name |
+| Shopping list | `shoppingList.blade.php` | Add products, view the saved list, and delete items with a delete button |
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Routes in `routes/web.php` connect each page and its form submissions to the corresponding controllers.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tech Stack
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **PHP** ^8.3
+- **Laravel** ^13.17
+- **Vite** for front-end asset bundling
+- **Pest** for testing
+- **Laravel Pint** for code style
+- **Laravel Tinker** and **Laravel Pail** for local debugging
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Requirements
 
-## Agentic Development
+- PHP 8.3 or higher
+- [Composer](https://getcomposer.org/)
+- Node.js and npm
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Getting Started
+
+Clone the repository:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/gMieFE/blade-exercise.git
+cd blade-exercise
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Run the one-step setup script, which installs dependencies, creates your `.env`, generates the app key, runs migrations, and builds front-end assets:
+
+```bash
+composer run setup
+```
+
+Start the development environment:
+
+```bash
+composer run dev
+```
+
+The app will be available at the URL printed in your terminal (typically <http://localhost:8000>).
+
+### Manual setup
+
+If you prefer to run each step yourself:
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+npm install
+npm run build
+```
+
+## Available Commands
+
+| Command | Description |
+| --- | --- |
+| `composer run setup` | Full first-time project setup |
+| `composer run dev` | Start the local development environment |
+| `composer run test` | Clear config cache and run the test suite |
+| `./vendor/bin/pint` | Format code with Laravel Pint |
+| `php artisan tinker` | Open an interactive REPL |
+
+## Project Structure
+
+```
+app/          Application code (models, controllers, providers)
+bootstrap/    Framework bootstrapping and cache
+config/       Configuration files
+database/     Migrations, factories, and seeders
+public/       Web root and compiled assets
+resources/    Blade views, CSS, and JavaScript
+routes/       Route definitions
+storage/      Logs, cache, and compiled views
+tests/        Pest test suite
+```
+
+Blade templates live in `resources/views`.
+
+## Testing
+
+```bash
+composer run test
+```
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Create a feature branch: `git checkout -b feature/my-change`
+2. Make your changes and add tests where relevant
+3. Format your code: `./vendor/bin/pint`
+4. Run the tests: `composer run test`
+5. Open a pull request
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is built on the Laravel framework, which is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
