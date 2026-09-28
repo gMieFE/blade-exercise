@@ -20,9 +20,10 @@ Routes in `routes/web.php` connect each page and its form submissions to the cor
 - **PHP** ^8.3
 - **Laravel** ^13.17
 - **Vite** for front-end asset bundling
-- **Pest** for testing
 - **Laravel Pint** for code style
 - **Laravel Tinker** and **Laravel Pail** for local debugging
+- **Tailwind** 
+
 
 ## Requirements
 
@@ -75,36 +76,6 @@ npm run build
 | `composer run test` | Clear config cache and run the test suite |
 | `./vendor/bin/pint` | Format code with Laravel Pint |
 | `php artisan tinker` | Open an interactive REPL |
-
-## Project Structure
-
-```
-app/          Application code (models, controllers, providers)
-bootstrap/    Framework bootstrapping and cache
-config/       Configuration files
-database/     Migrations, factories, and seeders
-public/       Web root and compiled assets
-resources/    Blade views, CSS, and JavaScript
-routes/       Route definitions
-storage/      Logs, cache, and compiled views
-tests/        Pest test suite
-```
-
-Blade templates live in `resources/views`.
-
-## Testing
-
-```bash
-composer run test
-```
-
-## Contributing
-
-1. Create a feature branch: `git checkout -b feature/my-change`
-2. Make your changes and add tests where relevant
-3. Format your code: `./vendor/bin/pint`
-4. Run the tests: `composer run test`
-5. Open a pull request
 
 ## License
 
