@@ -66,7 +66,8 @@
                             </div>
 
 
-                            <form action="/shoppingList/delete" method="POST">
+                            <form action="{{ route('shopping_list.delete') }}" method="POST">
+                                @method('delete')
                                 @csrf
 
                                 <input type="hidden" name="id" value="{{ $product->id }}">

@@ -11,9 +11,9 @@ Route::get('/form', [FormController::class, 'formGet'])->name('form');
 Route::post('/form', [FormController::class, 'formPost']);
 
 
-Route::get('/shoppingList', [ShoppingListController::class, 'shoppingListGet'])->name('shoppingList');
+Route::get('/shoppingList', [ShoppingListController::class, 'shoppingListGet'])->name('shopping_list');
 Route::post('/shoppingList', [ShoppingListController::class, 'shoppingListPost']);
-Route::post('/shoppingList/delete', [ShoppingListController::class, 'shoppingListDelete']);
+Route::delete('/shoppingList', [ShoppingListController::class, 'shoppingListDelete'])->name('shopping_list.delete');
 
 
 
