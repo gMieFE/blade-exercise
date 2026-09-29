@@ -24,7 +24,7 @@
                         <h1 class="h-fit mb-5">SHOPPING LIST</h1>
 
                         <form class="grid grid-cols-1 w-fit h-fit gap-3" action="" method="post">
-                            @csrf
+                             @csrf
                             <div class="grid grid-cols-2">
                                 <label for="product_name">Product name</label>
                                 <input class="border" type="text" name="product_name" id="product-name">
